@@ -14,10 +14,6 @@ if (isset($_REQUEST['usermail'])) {
 $get_usermail = $_REQUEST['usermail'];
 }
 
-if (isset($_REQUEST['lang'])) {
-  $lang = $_REQUEST['lang'];
-  }
-
 $get_msgfilepath = "lang/".$get_lang."/registration_msg.json";
 $getmsg_JSON = file_get_contents($get_msgfilepath);      
 $getmsg_JSON_array = json_decode($getmsg_JSON, true);
@@ -28,7 +24,12 @@ $pdo_db_connect = new class_database_connect("easyraw_userdatabase");
 $db_connection=$pdo_db_connect -> get_connection();
 
   if(!$db_connection) {
- echo '<div id="wrong_emailadress" class="card-panel white-text red darken-2">'.$getmsg_JSON_array["db_connecterror"].'</div>';
+
+    $msg_emailadress = array(
+      'result' => 'fail',
+      'errormsg'=> $getmsg_JSON_array["db_connecterror"]
+    );
+
   }else{
 
     $get_email_ecryptclass = new class_Encryption();
@@ -41,18 +42,29 @@ $db_connection=$pdo_db_connect -> get_connection();
     $getCols = $db_local_stmt -> rowCount();
 
   if ($getCols>0) {
-    echo '<div id="wrong_emailadress" class="card-panel white-text orange darken-2">'.$getmsg_JSON_array["mailadresse_isregistered"].'</div>';
+    $msg_emailadress = array(
+      'result' => 'fail',
+      'errormsg'=> $getmsg_JSON_array["db_connecterror"]
+    );
   }else{
-    echo 'Ok';
+    $msg_emailadress = array(
+      'result' => 'ok',
+      'errormsg'=> 'MailOk'
+    );
   }
 
 }
 
 }else{
 
-echo '<div id="wrong_emailadress" class="card-panel white-text orange darken-2">'.$getmsg_JSON_array["wrong_mailadress"].'</div>';
+  $msg_emailadress = array(
+    'result' => 'fail',
+    'errormsg'=> $getmsg_JSON_array["db_connecterror"]
+  );
 
 }
+
+echo json_encode($msg_emailadress);
 
 
 

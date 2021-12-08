@@ -1,0 +1,5 @@
+{
+    "wrong_mailadress": "Dies ist keine gültige Emails-Adresse. Bitte Eingabe prüfen!",
+    "mailadresse_isnotregistered": "Diese Emailadaresse ist noch nicht vergeben.",
+    "db_connecterror": "Datenbankverbindung fehlgeschlagen."
+}

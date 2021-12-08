@@ -1,0 +1,5 @@
+{
+    "wrong_mailadress": "This is not a valid email address. Please check your input!",
+    "mailadresse_isnotregistered": "This email address has not yet been assigned.",
+    "db_connecterror": "Database Connection Error"
+}
