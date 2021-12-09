@@ -1,10 +1,10 @@
 <?php
 //Fehler-Report
-//ini_set('display_errors', 'On');
-//error_reporting (E_ALL | E_STRICT);
+ini_set('display_errors', 'On');
+error_reporting (E_ALL | E_STRICT);
 
-include_once "scripts/class_database_connect.php";
-include_once "scripts/class_Encryption.php";
+include_once(__DIR__.'/scripts/class_database_connect.php');
+include_once(__DIR__.'/scripts/class_Encryption.php');
 
 if (isset($_REQUEST['lang'])) {
   $get_lang = $_REQUEST['lang'];
@@ -44,7 +44,7 @@ $db_connection=$pdo_db_connect -> get_connection();
   if ($getCols>0) {
     $msg_emailadress = array(
       'result' => 'fail',
-      'errormsg'=> $getmsg_JSON_array["db_connecterror"]
+      'errormsg'=> $getmsg_JSON_array["mailadresse_isregistered"]
     );
   }else{
     $msg_emailadress = array(
@@ -59,7 +59,7 @@ $db_connection=$pdo_db_connect -> get_connection();
 
   $msg_emailadress = array(
     'result' => 'fail',
-    'errormsg'=> $getmsg_JSON_array["db_connecterror"]
+    'errormsg'=> $getmsg_JSON_array["wrong_mailadress"]
   );
 
 }
