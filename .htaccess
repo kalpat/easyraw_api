@@ -1,0 +1,3 @@
+RewriteEngine on
+
+RewriteRule ^registrationmailcheck?$ /easyraw_api/chk_registrationmail.php [L]
