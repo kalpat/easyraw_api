@@ -35,7 +35,7 @@ $db_connection=$pdo_db_connect -> get_connection();
     $get_email_ecryptclass = new class_Encryption();
     $get_email_encryption = $get_email_ecryptclass -> encryptString($get_usermail);
     
-    $db_locale_query='SELECT er_email FROM user_database WHERE er_email = :email';
+    $db_locale_query='SELECT er_email FROM er_user_logins WHERE er_email = :email';
     $db_local_stmt = $db_connection->prepare($db_locale_query);
     $db_local_stmt -> bindValue(":email", $get_email_encryption, PDO::PARAM_STR);
     $db_local_stmt -> execute();
@@ -48,7 +48,7 @@ $db_connection=$pdo_db_connect -> get_connection();
     );
   }else{
     $msg_emailadress = array(
-      'result' => 'ok',
+      'result' => 'Ok',
       'errormsg'=> 'MailOk'
     );
   }
