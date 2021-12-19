@@ -2,5 +2,7 @@
     "wrong_mailadress": "This is not a valid email address. Please check your input!",
     "mailadresse_isregistered": "This email address is already taken.",
     "db_connecterror": "Database Connection Error",
-    "password_notsave": "The password is too insecure! Choose a secure password."
+    "password_notsave": "The password is too insecure! Choose a secure password.",
+    "newaccount_fail" :"The account could not be created. Please try again!",
+    "auth_fail": "Authentication failed."
 }

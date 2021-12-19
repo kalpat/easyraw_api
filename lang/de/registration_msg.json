@@ -2,6 +2,8 @@
     "wrong_mailadress": "Dies ist keine gültige Emails-Adresse. Bitte Eingabe prüfen!",
     "mailadresse_isregistered": "Diese Emailadresse ist bereits vergeben.",
     "db_connecterror": "Datenbankverbindung fehlgeschlagen.",
-    "password_notsave": "Das Passwort ist zu unsicher! Wählen Sie ein sicheres Passwort."
+    "password_notsave": "Das Passwort ist zu unsicher! Wählen Sie ein sicheres Passwort.",
+    "newaccount_fail": "Der Account konnte nicht erstellt werden. Bitte noch einmal versuchen!",
+    "auth_fail": "Authentifizierung fehlgeschlagen."
 
 }
