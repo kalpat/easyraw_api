@@ -9,8 +9,8 @@ public function __construct($newaccount){
     include_once (__DIR__.'scripts/class_Encryption.php');
     
     //Sprachausgabe gewährleisten
-    if (isset($_POST['newaccount']['lang'])) {
-    $lang = $_POST['newaccount']['lang'];
+    if (isset($newaccount['newaccount']['lang'])) {
+    $lang = $newaccount['newaccount']['lang'];
       }else{
         $lang = "en";
       }

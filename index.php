@@ -6,7 +6,7 @@ error_reporting (E_ALL | E_STRICT);
 //Klassen automatisch einbinden - PHP-Datei-Bezeichnung und Klassenbezeichnung muss identisch sein
 
 spl_autoload_register(function ($class) {
-    include(__DIR__.'/scripts/' . $class . '.php');
+    include(__DIR__ . '/scripts/' . $class . '.php');
 });
 
 if (isset($_GET["mode"])) {
@@ -14,26 +14,23 @@ if (isset($_GET["mode"])) {
 $mode = $_GET["mode"];
 
 switch ($mode) {
-    //Eingebene Mail-Adresse im Registrierung-Formular prüfen‚
+    //Eingegebene Mail-Adresse im Registrierung-Formular prüfen‚
     case 'chk_registrationmail':
-        var_dump($_POST);
         if (isset($_POST)) {
-            echo 'TEST 2';
-            new class_check_registrationmail($_REQUEST);
+            new class_check_registrationmail($_POST);
         }
+        break;
+    case 'chk_registrationpassword':
+        //Eingegebenes Password im Registrierungsformular prüfen. Gibt Sicherheitslevel zurück.
+        if (isset($_POST)) {
+            new class_registrationpassword_level($_POST);
+        }
+        break;
+        //Account kann angelegt werden, Registrierungsformular hat alle Prüfungen (clientseitig) bestanden.
+    case 'create_newaccount':
+
         break;
 }
 
-
-
-
-
-
-
-
-
 }
-
-
-
 ?>

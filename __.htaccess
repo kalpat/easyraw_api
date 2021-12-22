@@ -1,5 +1,5 @@
 RewriteEngine on
 
-RewriteRule ^registrationmailcheck?$ /chk_registrationmail.php [L]
-RewriteRule ^passwordsecuretylevel?$ /chk_registrationpassword.php [L]
-RewriteRule ^createnewaccount?$ /create_new_account.php [L]
+RewriteRule ^registrationmailcheck?$ /index.php?mode=chk_registrationmail [L]
+RewriteRule ^passwordsecuretylevel?$ /index.php?mode=chk_registrationpassword [L]
+RewriteRule ^createnewaccount?$ /index.php?create_newaccount [L]
