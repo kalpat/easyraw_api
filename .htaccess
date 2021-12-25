@@ -2,4 +2,4 @@ RewriteEngine on
 
 RewriteRule ^registrationmailcheck?$ /easyraw_api/index.php?mode=chk_registrationmail [L]
 RewriteRule ^passwordsecuretylevel?$ /easyraw_api/index.php?mode=chk_registrationpassword  [L]
-RewriteRule ^createnewaccount?$ /easyraw_api/index.php?create_newaccount [L]
+RewriteRule ^createnewaccount?$ /easyraw_api/index.php?mode=create_newaccount [L]

@@ -29,6 +29,9 @@ switch ($mode) {
         //Account kann angelegt werden, Registrierungsformular hat alle Prüfungen (clientseitig) bestanden.
     case 'create_newaccount':
 
+        if(isset($_POST)){
+        new class_create_new_account($_POST);
+    }
         break;
 }
 
